@@ -1,9 +1,11 @@
 
 // import { ChakraProvider } from '@chakra-ui/react'
-import Nav from "./Nav"
-import CarWindget from "./CartWindget";
-import ItemListContainer from "./ItemListContainer";
-import ItemCount from "./componentes/ItemCount";
+
+import NavBar from "./componentes/Navbar/NavBar";
+import ItemListContainer from "./componentes/ItemLisContainer/ItemListContainer";
+import ItemCount from "./componentes/ItemCount/ItemCount";
+
+
 // function App() {
 //   // 2. Wrap ChakraProvider at the root of your app
 //   return (
@@ -16,20 +18,13 @@ import ItemCount from "./componentes/ItemCount";
 
 function App() {
   return (
-    <>
-    <Nav/>
-    <CarWindget/>
- <main class="p-6 w-16">
-    <ItemListContainer greeting ="Bienvenidos" />
-    
-    </main>
+    <div className="App">
+    <NavBar/>
+     
+ <ItemListContainer greeting ={'Bienvenidos'} />
+ <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log('cantidad agregada',quantity)}/>
+ </div>
 
-    <ItemCount/>
- 
-    </>
-    
-
-   
   );
 }
 
