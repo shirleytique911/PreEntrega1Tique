@@ -1,10 +1,9 @@
 
 // import { ChakraProvider } from '@chakra-ui/react'
-
 import NavBar from "./componentes/Navbar/NavBar";
 import ItemListContainer from "./componentes/ItemLisContainer/ItemListContainer";
-import ItemCount from "./componentes/ItemCount/ItemCount";
-
+// import ItemCount from "./componentes/ItemCount/ItemCount";
+import  ItemDetailContainer from "./componentes/ItemdetailContainer/ItemDetailContainer";
 
 // function App() {
 //   // 2. Wrap ChakraProvider at the root of your app
@@ -24,7 +23,8 @@ function App() {
     <NavBar/>
      
  <ItemListContainer greeting ={'Bienvenidos'} />
- <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log('cantidad agregada',quantity)}/>
+ {/* <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log('cantidad agregada',quantity)}/> */}
+<ItemDetailContainer/>
  </div>
 
   );
