@@ -1,5 +1,5 @@
 
-export const product =[
+export const products =[
     { id:1, product:"almojabanas",category:"queso",precio: 2000,unidades: 400,ciudad:"ibague",img:"https://scontent.fibe1-1.fna.fbcdn.net/v/t1.6435-9/98205729_10222820604210463_8633883162683899904_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=FtJICEEGmRMAX-mamEB&_nc_ht=scontent.fibe1-1.fna&oh=00_AfCzDio0T1nVTJcp97x3v8C32dhuAyDf_nhPa3Aan1XI-A&oe=64A649B1"},
   
     { id:2, product:"pandeyucas",category:"queso",precio: 2000, unidades: 400,ciudad:"ibague", img:"https://scontent.fibe1-1.fna.fbcdn.net/v/t1.6435-9/99122753_10222820601650399_525658990068105216_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=oLUd-Br8dKsAX8Nx1Sa&_nc_ht=scontent.fibe1-1.fna&oh=00_AfAzdE02YLICMMYXQW6jtVPBNM_kWPF7MZOOaZ4pbeKaMg&oe=64A65296"},
@@ -18,7 +18,15 @@ export const product =[
   
     {id:9, product:"bizcochos-de-manteca",category:"sal", precio:3000, unidades: 400,ciudad:"ibague",img:"https://img-global.cpcdn.com/recipes/42c1063d14df1547/1200x630cq70/photo.jpg"},
   
-    {id:10, product:"panderos",categoria:"dulce", precio:4000, unidades: 400,ciudad:"ibague",img:"https://img-global.cpcdn.com/recipes/2850f7565061226b/1360x964cq70/panderos-vallunos-foto-principal.webp"}
+    {id:10, product:"panderos",category:"dulce", precio:4000, unidades: 400,ciudad:"ibague",img:"https://img-global.cpcdn.com/recipes/2850f7565061226b/1360x964cq70/panderos-vallunos-foto-principal.webp"}
   
 ]
+
+export const getProducts =() => {
+    return new Promise ((resolve) =>{
+        setTimeout(() => {
+            resolve(getProducts)
+        })
+    })
+}
 

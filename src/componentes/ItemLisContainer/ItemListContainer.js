@@ -1,38 +1,34 @@
-import {ItemCount, text} from '../ItemCount/ItemCount'
-import  {product}  from '../utilis/product'
-import { ItemList} from '../ItemList/ItemList'
-import {customFecth } from '../utilis/customFetch'
-import { useState, useEffect } from 'react'
+import {useState, useEffect}  from 'react'
+import  {getProducts}  from '../utilis/product'
+import  {ItemList} from '../ItemList/ItemList'
+
+
 
 
 const ItemListContainer =({greeting})=> {
- const [listaProduct,setListaProduct] = useState([])
- const [loading, setLoading] =useState (true)
+ const [products,setProducts] = useState([])
 
  useEffect(() =>{
-    setLoading(true)
-    customFecth(product)
-      .then(res =>{ 
-        setLoading(false)
-        setListaProduct(res)
-    }) 
+    getProducts()
+      .then(response =>{ 
+        setProducts(response)
+
+    })
+    .catch(error => {
+        console.error(error)
+    })
  }, [])
 
 
     return(
-        <>
     <div>
 
         <h1>{greeting}</h1>
-        {!loading
-         ?
-        <ItemList ListaProduct = {listaProduct}/>
-        :
-        <text>cargando...</text>
+         
+        <ItemList products = {products}/>
+        
 
-        }
     </div>
-    </>
     )
 }
 

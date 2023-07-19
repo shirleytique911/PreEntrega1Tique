@@ -1,10 +1,11 @@
-// import{Item} from"../Item"
+import  Item from "../Item/Item"
 
-const ItemList = ({listaProduct}) =>{
+const ItemList = ({products}) =>{
 
     return(
-        <div></div>
-// {listaProduct.map(product=> <Item key ={producto.id}/>)}
+        <div className="ListGroup">
+{products.map(prod=> <Item key ={prod.id} {...prod}/>)}
+</div>
         )
 }
 
