@@ -1,5 +1,5 @@
 
-const Item = ({id,product,category,precio,unidades,img}) =>{
+const Item = ({product,category,precio,unidades,img}) =>{
 
     return(
         <article className="CardItem">
@@ -12,9 +12,7 @@ const Item = ({id,product,category,precio,unidades,img}) =>{
                     <img src={img} alt={product}className="ItemImg"/>
                 </picture>
                 <section>
-                    <p className="Info">
-                        id:{id}
-                    </p>
+                    
                     <p className="Info">
                        Precio: ${precio} 
                     </p>
