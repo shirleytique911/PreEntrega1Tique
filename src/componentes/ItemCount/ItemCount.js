@@ -21,7 +21,7 @@ const ItemCount =({stock,initial,onAdd}) =>{
 
     return(
         
-<div className='Counter'>
+<div className='Counter flex justify-center'>
         <div className='Controls'>
         <button className="Button" onClick={decrement}>-</button>
         <h4 className='Number'>{quantity}</h4>
@@ -31,7 +31,7 @@ const ItemCount =({stock,initial,onAdd}) =>{
         </div>
        <div>
 
-       <button className="Button" onClick={() => onAdd(quantity)} disabled ={!stock}>
+       <button className="Button flex justify-center border-none outline-0 p-3 text-lime-500 bg-black text-center w-full cursor-pointer text-lg" onClick={() => onAdd(quantity)} disabled ={!stock}>
 
        </button>
     

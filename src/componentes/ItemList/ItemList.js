@@ -1,4 +1,6 @@
 import  Item from "../Item/Item"
+import { products } from "../utilis/product"
+
 
 const ItemList = ({products}) =>{
 
@@ -9,4 +11,4 @@ const ItemList = ({products}) =>{
         )
 }
 
-export { ItemList}
+export  {ItemList}

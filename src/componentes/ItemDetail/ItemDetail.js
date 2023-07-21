@@ -1,37 +1,37 @@
 import ItemCount from "../ItemCount/ItemCount"
-import ItemDetailContainer from "../ItemdetailContainer/ItemDetailContainer";
+// import ItemDetailContainer from "../ItemdetailContainer/ItemDetailContainer";
 
-const ItemDetail =({id, product,img,category,precio,unidades,ciudad}) =>{
+const ItemDetail =({product,img,category,precio,unidades,ciudad}) =>{
     return(
-        <article className="CardItem">
-        <header className="Header">
+        <article className="CardItem flex my-30 mx-80 mr-80  justify-around flex-wrap py-12 text-center font-serif">
+        <header className="Header flex my-30 mx-80 mr-80  justify-around flex-wrap py-12 ">
             <h2 className="ItemHeader">
                 {product}
             </h2>
             </header>
             <picture>
-                <img src={img} alt={product}className="ItemImg"/>
+                <img src={img} alt={product}className="ItemImg  w-4/5  h-64 rounded-xl"/>
             </picture>
             <section>
             <p className="Info">
-                   Articulo{product} 
+                   Articulo : {product} 
                 </p>
             <p className="Info">
-                   Ciudad{ciudad} 
+                   Ciudad: {ciudad} 
                 </p>
                 <p className="Info">
                    Precio: ${precio} 
                 </p>
                 <p className="Info">
-                    stock disponible:{unidades}
+                    Stock disponible :{unidades}
                 </p>
                 <p className="Info">
-                    categoria: {category}
+                    Categoria: {category}
                 </p>
 
             </section>
-                <footer className='ItemFooter'>
-                <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log('cantidad agregada',quantity)}/>
+                <footer className='ItemFooter flex justify-center border-none outline-0 p-3 text-lime-500 bg-black text-center w-full cursor-pointer text-lg'>
+                <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log('cantidad agregada flex justify-between',quantity)}/>
 
                     </footer> 
         
