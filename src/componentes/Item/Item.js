@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 
-const Item = ({product,precio,unidades,img,id}) =>{
+const Item = ({id, product, img, precio, unidades,}) =>{
 
     return(
         <article className="CardItem  flex-wrap my-30 mx-80 mr-80  justify-around flex-wrap py-12  text-center font-serif ">

@@ -22,7 +22,7 @@ export const products =[
 ]
 
 export const getProducts =() => {
-    return new Promise ((resolve) =>{
+    return new Promise ((resolve) => {
         setTimeout(() => {
             resolve(products)
         },500)

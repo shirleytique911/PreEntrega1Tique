@@ -1,12 +1,11 @@
 import {useState, useEffect}  from 'react'
-import  {getProducts,getProductsByCategory }  from '../utilis/product'
-import  {ItemList} from '../ItemList/ItemList'
+import  {getProducts, getProductsByCategory }  from '../utilis/product'
+import  ItemList from '../ItemList/ItemList'
 
 import {useParams} from 'react-router-dom'
 
-
-const ItemListContainer =({greeting})=> {
- const [products,setProducts] = useState([])
+const ItemListContainer =({ greeting }) => {
+ const [products, setProducts] = useState([])
 
 const { categoryId } = useParams()
 
