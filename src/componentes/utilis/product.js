@@ -31,9 +31,9 @@ export const getProducts =() => {
 
 export const getProductsById =(id) => {
     return new Promise ((resolve, reject) => {
-            const item =Products.find(prod => prod.id === id);
-            if(item){
-                resolve(item)
+            const ItemId =Products.find(prod => prod.id === id);
+            if(ItemId){
+                resolve(ItemId)
             }else{
                 reject({
                     error: "No se encontro el producto"
