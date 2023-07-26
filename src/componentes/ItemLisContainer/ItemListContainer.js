@@ -1,11 +1,11 @@
-import {useState, useEffect}  from 'react'
+import  React, {useState, useEffect}  from 'react'
 import  {getProducts, getProductsByCategory }  from '../utilis/product'
 import  ItemList from '../ItemList/ItemList'
 
 import {useParams} from 'react-router-dom'
 
 const ItemListContainer =({ greeting }) => {
- const [products, setProducts] = useState([])
+ const [Products, setProducts] = useState([])
 
 const { categoryId } = useParams()
 
@@ -24,7 +24,7 @@ asyncFunc(categoryId)
 return (
     <div>
         <h1>{greeting}</h1>
-        <ItemList products={products}/>
+        <ItemList Products={Products}/>
     </div>
 )
 }

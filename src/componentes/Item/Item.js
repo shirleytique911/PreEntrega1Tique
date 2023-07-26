@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 
-
-const Item = ({id, product, img, precio, unidades,}) =>{
+const Item =({id, product,img,precio,unidades,category,}) => {
 
     return(
         <article className="CardItem  flex-wrap my-30 mx-80 mr-80  justify-around flex-wrap py-12  text-center font-serif ">
             <header className="Header">
                 <h2 className="ItemHeader">
-                    {product}
+                    {id}
                 </h2>
                 </header>
                 <picture>
@@ -20,8 +19,13 @@ const Item = ({id, product, img, precio, unidades,}) =>{
                         precio:$ 
                         {precio}
                     </p>
+
                     <p className="Info">
                         stock disponible: {unidades}
+                    </p>
+                    
+                    <p className="Info">
+                        Categoria: {category}
                     </p>
 
                 </section>
@@ -32,8 +36,8 @@ const Item = ({id, product, img, precio, unidades,}) =>{
 
                 </article>
 
-
+    
     )
 }
 
-export default Item;
+export default Item

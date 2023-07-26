@@ -1,30 +1,30 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import { getProductsById } from '../utilis/product';
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
-    const [products, setProducts] = useState(null) 
+    const [Products, setProducts] = useState(null) 
 
-    const {itemId} =useParams()
+    const {ItemId} =useParams()
 
 
     useEffect(() => {
-     getProductsById(itemId)
+     getProductsById(ItemId)
      .then(response =>{
         setProducts(response)
      })
      .catch(error =>{
         console.error(error)
      })
-     }, [itemId])
+     }, [ItemId])
 
 
 
 
      return(
         <div className='ItemDetailContainer'>
-            <ItemDetail {...products} />
+            <ItemDetail {...Products} />
         </div>
      )
 

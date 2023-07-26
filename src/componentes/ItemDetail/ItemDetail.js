@@ -1,7 +1,7 @@
 import ItemCount from "../ItemCount/ItemCount"
-import { products } from "../utilis/product"
+// import { Products } from "../utilis/product";
 
-const ItemDetail = ({precio, unidades, category, product, ciudad, img }) =>{
+const ItemDetail = ({precio, unidades, category, product, id, ciudad,img}) =>{
 
 
 
@@ -10,8 +10,9 @@ const ItemDetail = ({precio, unidades, category, product, ciudad, img }) =>{
     return(
         <article className="CardItem flex my-30 mx-80 mr-80  justify-around flex-wrap py-12 text-center font-serif">
         <header className="Header flex my-30 mx-80 mr-80  justify-around flex-wrap py-12 ">
+           
             <h2 className="ItemHeader">
-                {product}
+                {id}
             </h2>
             </header>
             <picture>
@@ -19,7 +20,7 @@ const ItemDetail = ({precio, unidades, category, product, ciudad, img }) =>{
             </picture>
             <section>
             <p className="Info">
-                   Articulo : {products} 
+                   Articulo : {product} 
                 </p>
             <p className="Info">
                    Ciudad: {ciudad} 
@@ -36,17 +37,18 @@ const ItemDetail = ({precio, unidades, category, product, ciudad, img }) =>{
 
             </section>
             
-                <footer className='ItemFooter flex justify-center border-none outline-0 p-3 text-lime-500 bg-black text-center w-full cursor-pointer text-lg'>
+            <footer className='ItemFooter flex justify-center border-none outline-0 p-3 text-lime-500 bg-black text-center w-full cursor-pointer text-lg'>
 
-                <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log('cantidad agregada flex justify-between',quantity)}/>
+<ItemCount initial={1} stock={10} onAdd={(quantity) => console.log('cantidad agregada flex justify-between',quantity)}/>
 
-                    </footer> 
+    </footer> 
+
         
 
             </article>
 
 
-)
+   )
 }  
 
 export default ItemDetail;

@@ -1,5 +1,5 @@
 
-export const products =[
+export const Products = [
     { id:'1', product:'Almojabanas',category:'Queso',precio: 2000,unidades: 400,ciudad:"Ibague",img:'https://scontent.fibe1-1.fna.fbcdn.net/v/t1.6435-9/98205729_10222820604210463_8633883162683899904_n.jpg?_nc_cat=109&cb=99be929b-3346023f&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeEF7J40Tgd-NlfrXfgaatvnrRfW09IyXe6tF9bT0jJd7ikExEi8HQ66w_dMpiNd__o&_nc_ohc=fEhJU_Fj37kAX_Rezy_&_nc_ht=scontent.fibe1-1.fna&oh=00_AfDRRikwcXmOZGg0DTtdvOYbrWIuKYyUQbgJizD3fDptXw&oe=64DEC1F1'},
   
     { id:'2', product:"Pandeyucas",category:"Queso",precio: 2000, unidades: 400,ciudad:"Ibague", img:"https://scontent.fibe1-1.fna.fbcdn.net/v/t1.6435-9/99127654_10222820609050584_6367990990069825536_n.jpg?_nc_cat=109&cb=99be929b-3346023f&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeGM6CMoKdEF59AKQU6kIIoqoAs4ICyQGxegCzggLJAbF5NDBYMmpjZPY1G2DG3r-5E&_nc_ohc=kDBMBF68jO8AX9cuRRT&_nc_ht=scontent.fibe1-1.fna&oh=00_AfAmoidGDsg7IQnljBgT6cbZp46Oz_lVvBZ2g_f1HRwfIQ&oe=64DEB7FE"},
@@ -22,28 +22,32 @@ export const products =[
 ]
 
 export const getProducts =() => {
-    return new Promise ((resolve) => {
+    return new Promise ((resolve, ) => {
         setTimeout(() => {
-            resolve(products)
+            resolve(Products)
         },500)
-    })
+    },)
 }
 
-export const getProductsById =(productsId) => {
-    return new Promise ((resolve) => {
-        setTimeout(() =>{
-            resolve(products.find(prod => prod.id === productsId))
-
+export const getProductsById =(id) => {
+    return new Promise ((resolve, reject) => {
+            const item =Products.find(prod => prod.id === id);
+            if(item){
+                resolve(item)
+            }else{
+                reject({
+                    error: "No se encontro el producto"
     
 
-        },500)
-    })
+        })
+    }
+    },)
 }
 
 export const getProductsByCategory =(categoryId) => {
     return new Promise ((resolve) => {
         setTimeout(() =>{
-            resolve(products.find(prod => prod.id === categoryId))
+            resolve(Products.find(prod => prod.id === categoryId))
 
     
 
