@@ -6,7 +6,7 @@ const Item =({id, product,img,precio,unidades,category,}) => {
         <article className="CardItem  flex-wrap my-30 mx-80 mr-80  justify-around flex-wrap py-12  text-center font-serif ">
             <header className="Header">
                 <h2 className="ItemHeader">
-                    {id}
+                    {product}
                 </h2>
                 </header>
                 <picture>

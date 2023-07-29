@@ -29,19 +29,15 @@ export const getProducts =() => {
     },)
 }
 
-export const getProductsById =(id) => {
-    return new Promise ((resolve, reject) => {
-            const ItemId =Products.find(prod => prod.id === id);
-            if(ItemId){
-                resolve(ItemId)
-            }else{
-                reject({
-                    error: "No se encontro el producto"
+export const getProductsById =(ProductsId) => {
+    return new Promise ((resolve) => {
+        setTimeout(() =>{
+            resolve(Products.find(prod => prod.id === ProductsId))
+
     
 
-        })
-    }
-    },)
+        },500)
+    })
 }
 
 export const getProductsByCategory =(categoryId) => {

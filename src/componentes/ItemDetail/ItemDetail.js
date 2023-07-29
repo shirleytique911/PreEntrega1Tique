@@ -1,7 +1,8 @@
 import ItemCount from "../ItemCount/ItemCount"
 // import { Products } from "../utilis/product";
+import { Link } from "react-router-dom";
 
-const ItemDetail = ({precio, unidades, category, product, id, ciudad,img}) =>{
+const ItemDetail = ({precio, unidades, category, product, ciudad,img, id}) =>{
 
 
 
@@ -12,7 +13,7 @@ const ItemDetail = ({precio, unidades, category, product, id, ciudad,img}) =>{
         <header className="Header flex my-30 mx-80 mr-80  justify-around flex-wrap py-12 ">
            
             <h2 className="ItemHeader">
-                {id}
+                {product}
             </h2>
             </header>
             <picture>
@@ -36,7 +37,8 @@ const ItemDetail = ({precio, unidades, category, product, id, ciudad,img}) =>{
                 </p>
 
             </section>
-            
+            <Link to={`/item/${id}`} className='Option'></Link>
+
             <footer className='ItemFooter flex justify-center border-none outline-0 p-3 text-lime-500 bg-black text-center w-full cursor-pointer text-lg'>
 
 <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log('cantidad agregada flex justify-between',quantity)}/>

@@ -1,9 +1,0 @@
-/* import ItemCount from "../ItemCount/ItemCount"
-
-<footer className='ItemFooter flex justify-center border-none outline-0 p-3 text-lime-500 bg-black text-center w-full cursor-pointer text-lg'>
-
-<ItemCount initial={1} stock={10} onAdd={(quantity) => console.log('cantidad agregada flex justify-between',quantity)}/>
-
-    </footer> 
-
-    export :default ItemCount */

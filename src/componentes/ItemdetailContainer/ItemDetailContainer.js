@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { getProductsById } from '../utilis/product';
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from "react-router-dom";
@@ -6,18 +6,18 @@ import { useParams } from "react-router-dom";
 const ItemDetailContainer = () => {
     const [Products, setProducts] = useState(null) 
 
-    const {ItemId} =useParams()
+    const {itemId} =useParams()
 
 
     useEffect(() => {
-     getProductsById(ItemId)
+     getProductsById(itemId)
      .then(response =>{
         setProducts(response)
      })
      .catch(error =>{
         console.error(error)
      })
-     }, [ItemId])
+     }, [itemId])
 
 
 
