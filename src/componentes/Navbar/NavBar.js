@@ -10,9 +10,10 @@ const NavBar =() => {
     <h3 className="delicias font-serif">Delicias De Isa</h3>
   </Link>
 <div className="categories font-serif" >
-        <NavLink to={ `/`} className={({isActive}) => isActive ? 'ActiveOption':'Option'}>Productos/</NavLink>
-        <NavLink to={ `/category/Queso`} className={({isActive}) => isActive ? 'ActiveOption':'Option'}>Queso/</NavLink>
-        <NavLink to={ `/category/Dulce`} className={({isActive}) => isActive ? 'ActiveOption':'Option'}>Dulce</NavLink>
+        <NavLink to={ `/`} >Productos/</NavLink>
+        <NavLink to={ `/category/Sal`}>Sal/</NavLink>
+        <NavLink to={ `/category/Queso`}>Queso/</NavLink>
+        <NavLink to={ `/category/Dulce`} >Dulce</NavLink>
 
       </div>
 

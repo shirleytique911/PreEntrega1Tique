@@ -1,41 +1,49 @@
+// import {ItemCount} from '../ItemCount/ItemCount'
 import  {useState, useEffect}  from 'react'
-import  {getProducts, getProductsByCategory }  from '../utilis/product'
+import  {getProducts}  from '../utilis/product'
 import  ItemList from '../ItemList/ItemList'
 
 import {useParams} from 'react-router-dom'
 
+
 const ItemListContainer =({ greeting }) => {
 const [Products, setProducts] = useState([])
 
-const { categoryId } = useParams()
+const { category } = useParams()
+console.log(category)
 
+const [loading, setLoading] = useState(true);
 
-useEffect(() => {
+    useEffect(() =>{
+        setLoading(true);
+        getProducts()
+        .then((res) =>{
+            setLoading(false);
+            if (category){
+                setProducts(res.filter((prod) => prod.category ===category));
+            }else{
+                setProducts(res);
+            }
+            
 
-
-const asyncFunc = categoryId ? getProductsByCategory : getProducts
-
-asyncFunc(categoryId)
-.then(response => {
-    setProducts(response)
-})
-.catch(error =>{
-    console.error(error)
-})
-},[categoryId])
-
-
-return (
-    <div>
-        <h1>{greeting}</h1>
-        
-        <ItemList Products={Products}/>
-    </div>
-)
-
-
-
+        })
+    }, [category])
+    return (
+        <div>
+            {!loading
+            ?
+            <ItemList Products = {Products} />
+            :
+            <h2>Cargando......</h2>
+            }   
+        </div>
+    );
 }
+
+
+
+
+
 
 
 

@@ -2,7 +2,7 @@ import ItemCount from "../ItemCount/ItemCount"
 // import { Products } from "../utilis/product";
 import { Link } from "react-router-dom";
 
-const ItemDetail = ({precio, unidades, category, product, ciudad,img, id}) =>{
+const ItemDetail = ({precio, unidades, category, product, ciudad,img,id }) =>{
 
 
 

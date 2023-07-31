@@ -15,7 +15,7 @@ export const Products = [
   
     {id:'8', product:"Bizcochos-de-achira",category:"Queso", precio:8000, unidades: 400,ciudad:"Ibague",img:"https://cdn.colombia.com/gastronomia/2011/08/05/achira-1568.gif" },
   
-    {id:'9', product:"bizcochos-de-manteca",category:"sal", precio:3000, unidades: 400,ciudad:"ibague",img:"https://img-global.cpcdn.com/recipes/42c1063d14df1547/1200x630cq70/photo.jpg"},
+    {id:'9', product:"bizcochos-de-manteca",category:"Sal", precio:3000, unidades: 400,ciudad:"ibague",img:"https://img-global.cpcdn.com/recipes/42c1063d14df1547/1200x630cq70/photo.jpg"},
   
     {id:'10', product:"panderos",category:"dulce", precio:4000, unidades: 400,ciudad:"ibague",img:"https://img-global.cpcdn.com/recipes/2850f7565061226b/1360x964cq70/panderos-vallunos-foto-principal.webp"}
   
@@ -40,15 +40,5 @@ export const getProductsById =(ProductsId) => {
     })
 }
 
-export const getProductsByCategory =(categoryId) => {
-    return new Promise ((resolve) => {
-        setTimeout(() =>{
-            resolve(Products.find(prod => prod.id === categoryId))
-
-    
-
-        },500)
-    })
-}
 
 
