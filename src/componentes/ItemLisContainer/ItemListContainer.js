@@ -1,4 +1,3 @@
-// import {ItemCount} from '../ItemCount/ItemCount'
 import  {useState, useEffect}  from 'react'
 import  {getProducts}  from '../utilis/product'
 import  ItemList from '../ItemList/ItemList'
@@ -7,10 +6,10 @@ import {useParams} from 'react-router-dom'
 
 
 const ItemListContainer =({ greeting }) => {
+    
 const [Products, setProducts] = useState([])
 
 const { category } = useParams()
-console.log(category)
 
 const [loading, setLoading] = useState(true);
 

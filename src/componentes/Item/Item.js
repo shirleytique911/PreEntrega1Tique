@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Item =({id, product,img,precio,unidades,category,}) => {
 
     return(
-        <article className="CardItem  flex-wrap my-30 mx-80 mr-80  justify-around flex-wrap py-12  text-center font-serif ">
+        <article className="CardItem   flex-wrap my-30 mx-80 mr-80  justify-around flex-wrap py-12  text-center font-serif ">
             <header className="Header">
                 <h2 className="ItemHeader">
                     {product}

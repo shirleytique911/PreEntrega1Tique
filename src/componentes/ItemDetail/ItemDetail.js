@@ -1,9 +1,22 @@
+import { useContext, useState } from "react";
 import ItemCount from "../ItemCount/ItemCount"
-// import { Products } from "../utilis/product";
 import { Link } from "react-router-dom";
 
-const ItemDetail = ({precio, unidades, category, product, ciudad,img,id }) =>{
+import { CartContext } from "../Context/CartContext";
 
+const ItemDetail = ({precio, unidades, category, product, ciudad,img,id }) =>{
+const [ quantityAdded, setQuantityAdded] = useState (0)
+
+const { addItem} =useContext (CartContext)
+
+const handleOnAdd =(quantity) => {
+    setQuantityAdded(quantity)
+
+    const item = {
+        id, product,precio
+    }
+    addItem(item,quantity)
+}
 
 
 
@@ -37,11 +50,20 @@ const ItemDetail = ({precio, unidades, category, product, ciudad,img,id }) =>{
                 </p>
 
             </section>
-            <Link to={`/item/${id}`} className='Option'></Link>
+            
 
             <footer className='ItemFooter flex justify-center border-none outline-0 p-3 text-lime-500 bg-black text-center w-full cursor-pointer text-lg'>
+                {
+                    quantityAdded > 0 ? (
+                        <Link to= '/cart'  className= 'Option'>Terminar Compra</Link>
+                        // {`/item/${id}`}
+                    ) :(
+<ItemCount initial={1} stock={10} onAdd={handleOnAdd }/>
 
-<ItemCount initial={1} stock={10} onAdd={(quantity) => console.log('cantidad agregada flex justify-between',quantity)}/>
+                    )
+                }
+  <button  className="ButtonAgregar">Agregar al carrito</button>
+  
 
     </footer> 
 
