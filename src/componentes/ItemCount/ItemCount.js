@@ -31,7 +31,9 @@ const ItemCount =({stock,initial,onAdd}) =>{
         </div>
        <div>
 
-       <button className="Button flex justify-center border-none outline-0 p-3 text-lime-500 bg-black text-center w-full cursor-pointer text-lg" onClick={() => onAdd(quantity)} disabled ={!stock}>
+       <button className="Button flex justify-center border-none outline-0 p-3 text-lime-500 bg-black text-center w-full cursor-pointer text-lg" 
+       onClick={() => onAdd(quantity)} disabled ={!stock}>
+        Agregar al carrito
 
        </button>
     
