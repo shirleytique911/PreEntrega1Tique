@@ -1,20 +1,20 @@
 import  {useState, useEffect}  from 'react'
 import  ItemList from '../ItemList/ItemList'
-
 import {useParams} from 'react-router-dom'
+
 import {getDocs,collection, query, where } from 'firebase/firestore'
 
 import {db} from "../../firebase/firebaseConfig"
 
-const ItemListContainer =({ greeting }) => {
+const ItemListContainer = ({greeting}) => {
 
-const [Products, setProducts] = useState([])
+const [ Products, setProducts] = useState([])
 const [ loading, setLoading] = useState( true)
 
 const { category} = useParams()
 
 
-    useEffect(() =>{
+    useEffect(() => {
         setLoading(true)
 
         const collectionRef = category
