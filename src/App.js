@@ -1,47 +1,26 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import NavBar from "./componentes/Navbar/NavBar";
-import ItemListContainer from " ./componentes/ItemListContainer/ItemListContainer";
-import  ItemDetailContainer from "./componentes/ItemdetailContainer/ItemDetailContainer";
-import Cart from './componentes/Cart/Cart';
-import { CartProvider } from './context/CartContext';
+import Navbar from "./componentes/Navbar/NavBar";
 
 function App() {
   return (
 <>
+ <Navbar/>
     <div className= "App">
-      <BrowserRouter>
-      <CartProvider>
-    <NavBar/>
-     <Routes>
-     <Route path= '/' element={< ItemListContainer greeting ="Bienvenidos a Delicias de Isa! "/>}/>
-     <Route path='/category/:category' element={<ItemListContainer/>}/>
+      
+     
 
-     <Route path='/category/item/:itemId' element={<ItemListContainer/>}/>
-     <Route path='/item/:itemId' element={<ItemDetailContainer/>}/>
-     <Route path ='/cart' element ={<Cart/>}/>
-     {/* <Route path ='/checkout' element ={<Checkout/>}/> */}
+    
+
 
    
-
-
-
-
-
-
-</Routes>
-
-</CartProvider>
-
-</BrowserRouter>
+     
 
  </div>
  
- 
+ <footer className="p-2  bg-blue-800  text-white text[10] ">
+  Delicias de Isa
+ </footer>
 
-<footer className='bg-lime-500 text-center font-serif'>
-  <h2>CONTACTANOS</h2>
 
-</footer>
 </>
  
 
