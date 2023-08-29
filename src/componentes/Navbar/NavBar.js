@@ -1,10 +1,24 @@
+import Cartwidget from "../CarWindget/CartWindget"
+import { NavLink, Link } from "react-router-dom"
+// import React from "react"
+
+
 function Navbar (){
      return(
-        <nav className=" flex p2 justify-between bg-blue-300 shadow">
-            <h1 id="titulo">Delicias De Isa </h1>
-            <a href="http://">link</a>
-            <a href="http://">link</a>
-            <a href="http://">link</a>
+        <nav className=" flex p2 justify-between bg-blue-300 shadow delicias font-serif">
+            <Link to='/'>
+    <h3 className="delicias font-serif">Delicias De Isa</h3>
+   </Link>
+            <div className="categories font-serif p-2  ">
+       <NavLink to={ `/`} >Productos/</NavLink>
+       <NavLink to={ '/category/Sal'}>Sal/</NavLink>
+        <NavLink to={ '/category/Queso'}>Queso/</NavLink>
+        <NavLink to={ `/category/Dulce`} >Dulce</NavLink>
+
+
+
+          </div>
+            <Cartwidget/>
         </nav>
      )
 }

@@ -1,46 +1,43 @@
-// import  { useState, useEffect } from 'react';
-// // import { getProductsById } from '../utilis/product';
-// import ItemDetail from '../ItemDetail/ItemDetail'
-// import { useParams } from "react-router-dom";
+import  { useState, useEffect } from 'react';
+// import { getProductsById} from '../utilis/product';
+import ItemDetail from '../ItemDetail/ItemDetail'
 
-// import { getDoc,doc } from 'firebase/firestore';
-// import { db} from '../../firebase/firebaseConfig'
+import { useParams } from "react-router-dom";
 
-// const ItemDetailContainer = () => {
-//     const [Products, setProducts] = useState(null) 
-//     const [ loading, setLoading] = useState( true)
+import { getDoc,doc } from 'firebase/firestore';
+import { db} from '../../firebase/firebaseConfig'
 
-//     const {itemId} =useParams()
+const ItemDetailContainer = () => {
+    const [Products, setProducts] = useState(null) 
 
+const {itemId} =useParams ()
 
-//     useEffect(() => {
-//      setLoading(true)
+    useEffect(() => {
+const docRef= doc(db,"productos",itemId);
+getDoc(docRef)
+.then((resp)=>{
+    setProducts({...resp.data(),product: resp.product});
+})
 
-//      const docRef =doc (db,'productos', itemId)
+    //  getProductsById(itemId)
 
-//      getDoc(docRef)
-//      .then(response =>{
-//       const data = response.data()
-//       const productosAdapted ={ id: response.id, ...data}
-//         setProducts(productosAdapted)
-//      })
-//      .catch(error =>{
-//         console.error(error)
-//      })
-//      .finally(()=> {
-//       setLoading(false)
-//      })
-//      }, [itemId])
+    //  .then(response =>{
+    //  setProducts(response)
+    //  })
+    //  .catch(error =>{
+    //     console.error(error)
+    //  })
+     }, [itemId])
 
 
 
 
-//      return(
-//         <div className='ItemDetailContainer'>
-//             <ItemDetail {...Products} />
-//         </div>
-//      )
+     return(
+        <div className='ItemDetailContainer'>
+            <ItemDetail {...Products} />
+        </div>
+     )
 
-//      }
-//      export default ItemDetailContainer;
+     }
 
+     export default ItemDetailContainer

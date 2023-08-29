@@ -1,46 +1,36 @@
-import { useState } from 'react'
 
-const ItemCount =({stock,initial,onAdd}) =>{
-    const [ quantity ,  setQuantity] =useState(initial)
+import {  useState } from "react"
+// import { toast } from "react-toastify"
+// import { cartContext } from "./CustomProvider"
 
-    const incremet =() =>{
-        if(quantity < stock){
-            setQuantity(quantity+1)
-        }
+function ItemCount(props) {
 
+    const [count, setCount] = useState(0)
+    // const valorDelContexto = useContext(cartContext)
+
+    const handleSumar = () => {
+        setCount(count + 1)
     }
-    
-    
-    const  decrement =() =>{
-        if(quantity >1){
-            setQuantity(quantity -1)
-        }
-        
+
+    const handleRestar = () => {
+        setCount(count - 1)
     }
-    
 
-    return(
-        
-<div className='Counter flex justify-center'>
-        <div className='Controls'>
-        <button className="Button" onClick={decrement}>-</button>
-        <h4 className='Number'>{quantity}</h4>
-        <button  className="Button"onClick={incremet}>+</button>
+    const handleConfirmar = () => {
+        // valorDelContexto.agregarAlCarrito(count)
+        // toast.info("Producto agregado al carrito")
+    }
 
-        
+    return (
+        <div className="mt-4">
+            <p>Contador : {count}</p>
+            <div className="flex gap-4 mt-4">
+                <button className="rounded p-2 bg-blue-300 shadow-xl" onClick={handleSumar}>+</button>
+                <button className="rounded p-2 bg-blue-300 shadow-xl" onClick={handleConfirmar}>confirmar cantidad</button>
+                <button className="rounded p-2 bg-blue-300 shadow-xl" onClick={handleRestar}>-</button>
+            </div>
         </div>
-       <div>
-
-       <button className="Button flex justify-center border-none outline-0 p-3 text-lime-500 bg-black text-center w-full cursor-pointer text-lg" 
-       onClick={() => onAdd(quantity)} disabled ={!stock}>
-        Agregar al carrito
-
-       </button>
-    
-    
-    </div>
-    </div>
-       )
+    )
 }
 
-export default ItemCount;
+export default ItemCount

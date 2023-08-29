@@ -1,27 +1,30 @@
-import carrito from './assets/carrito de compras.png'
+import  carrito from './assets/carrito de compras.png'
 
-import { useContext } from 'react'
-// import { CartContext } from '../../context/CartContext'
-// import { Link } from 'react-router-dom'
+ import { useContext } from 'react'
+ import { CartContext } from '../../context/CartContext'
+ import { Link } from 'react-router-dom'
 
-// const CarWindget=() =>  {
-//     const { totalQuantity} =useContext(CartContext)
-    
 
-//     return(
-//         <Link to ='/cart' className='Cartwidget' style={{ display: totalQuantity > 0 ? ' block':'none'}}>
-// <img  src={carrito} alt="carrito de compras.png"className=" w-14" />0
-// <img className ='carrito de compras.png' src={cart} alt='cart-wdiget' />
 
-//        {totalQuantity}
-//         </Link>
+function Cartwidget() {
+    const { totalQuantity} = useContext (CartContext)
+    return (
+        <div>
+            <Link to='/cart' className='Carwinget' style={{display: totalQuantity > 0 ?'block':' none'}}>
+ <img  src={carrito} alt="carrito de compras.png"className=" w-12   " />0
+ {totalQuantity}
+ </Link>
+        </div>
+    )
+}
+
+export default Cartwidget
+
+
+
+
                 
 
 
     
         
-//     )
-
-// }
-
-// export default CarWindget;
