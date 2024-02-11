@@ -9,6 +9,7 @@ import { db} from '../../firebase/firebaseConfig'
 
 const ItemDetailContainer = () => {
     const [Products, setProducts] = useState(null) 
+    
 
 const {itemId} =useParams ()
 
